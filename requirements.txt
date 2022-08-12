@@ -5,3 +5,6 @@ pywhatkit
 gtts
 playsound==1.2.2
 pyjokes
+django-bootstrap-v5
+django-materialize
+django-materializecss-form
