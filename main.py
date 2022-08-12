@@ -1,4 +1,4 @@
-import os
+import subprocess
 try:
     import speech_recognition as sr
     import pyaudio as pa
@@ -7,8 +7,8 @@ try:
     from playsound import playsound
     from pyjokes import *
 except:
-    os.system('pip install -r requirements.txt')
-    
+    subprocess.check_output('pip install -r requirements.txt')
+   
 def speech(text):
     print(text)
     language = 'en'
