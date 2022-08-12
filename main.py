@@ -5,6 +5,7 @@ try:
     import pywhatkit as pwk
     from gtts import gTTS
     from playsound import playsound
+    from pyjokes import *
 except:
     os.system('pip install -r requirements.txt')
     
@@ -32,4 +33,4 @@ if "youtube" in text.lower():
     speech('Okay, I will bring that up on YouTube for you.')
     pwk.playonyt(text)
 elif "joke" in text.lower():
-    speech("Does a cookie go around a corner")
+    speech(pyjokes.get_joke())

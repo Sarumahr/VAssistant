@@ -1,6 +1,7 @@
 django
-speech_recognition
+SpeechRecognition
 pyaudio
 pywhatkit
 gtts
-playsound
+playsound==1.2.2
+pyjokes
