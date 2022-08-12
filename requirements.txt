@@ -1,0 +1,6 @@
+django
+speech_recognition
+pyaudio
+pywhatkit
+gtts
+playsound
