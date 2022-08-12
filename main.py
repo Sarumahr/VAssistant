@@ -1,9 +1,13 @@
-import speech_recognition as sr
-import pyaudio as pa
-import pywhatkit as pwk
-from gtts import gTTS
-from playsound import playsound
-
+import os
+try:
+    import speech_recognition as sr
+    import pyaudio as pa
+    import pywhatkit as pwk
+    from gtts import gTTS
+    from playsound import playsound
+except:
+    os.system('pip install -r requirements.txt')
+    
 def speech(text):
     print(text)
     language = 'en'
