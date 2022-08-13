@@ -1,35 +1,37 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <!--Custom css ADD HERE-->
-    
-    <!-- semantic UI -->
-    <link rel="stylesheet" type='text/css' href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.14/semantic.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+{% extends 'base.html' %}
+{% load materializecss %}
 
-  
-    <title>dashboard - {% block title %}{% endblock title %}</title>
-  </head>
-  <body>
-    <div class="ui container">
-      {% block content %}     
-      {% endblock content %}
-      <nav class="navbar">
-        <form action="/dashboard">
-          <input type="submit" value="Home"/>
-        </form>
-        <form action="/dashboard">
-          <input type="submit" value="Home"/>
-        </form>
-      </nav>
-    </div>
-    {% block scripts %}
-    {% endblock scripts %}
-  </body>
-</html>
+{% block css %}
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" crossorigin="anonymous" />
+{% endblock css %}
+
+{% block title %}
+{% endblock title %}
+
+{% block content %}
+<h1>Dashboard</h1>
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ form|materializecss }}
+</form>
+{% endblock content %}
+
+{% block scripts %}
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js" integrity="sha256-U/cHDMTIHCeMcvehBv1xQ052bPSbJtbuiw4QA9cTKz0=" crossorigin="anonymous"></script>
+
+<script>
+$(document).ready(function(){
+
+  // Initialize materialize data picker
+  $('.datepicker').datepicker({'format': 'yyyy-mm-dd'});
+  $('select').formSelect();
+
+});
+</script>
+{% endblock scripts %}
