@@ -1,8 +1,8 @@
-from django.http import HttpResponse
-from django.template import loader
+from django.shortcuts import render
+from django.views.generic import FormView
 
+from .forms import DashboardModelForm
 # Create your views here.
-def dashboard(request):
-    template = loader.get_template('dashboard/dashboard.html')
-    context = {}
-    return HttpResponse(template.render(context, request))
+class Dashboard(FormView):
+    form_class = DashboardModelForm
+    template_name = 'dashboard/forms.html'

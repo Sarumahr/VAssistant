@@ -2,25 +2,21 @@
 {% load materializecss %}
 
 {% block css %}
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" crossorigin="anonymous" />
 {% endblock css %}
 
 {% block title %}
 {% endblock title %}
 
 {% block content %}
-<h1>Dashboard</h1>
-<form action="" method="POST">
-    {% csrf_token %}
-    {{ form|materializecss }}
-</form>
+  {% block form %}
+  {% endblock form %}
 {% endblock content %}
 
 {% block scripts %}
 <script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+src="https://code.jquery.com/jquery-3.3.1.min.js"
   crossorigin="anonymous"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js" integrity="sha256-U/cHDMTIHCeMcvehBv1xQ052bPSbJtbuiw4QA9cTKz0=" crossorigin="anonymous"></script>
