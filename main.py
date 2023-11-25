@@ -40,4 +40,7 @@ if "youtube" in text.lower():
     pwk.playonyt(text)
 elif "joke" in text.lower():
 #    speech(pyjokes.get_joke())
-    speech("Hallo ich bin eine sprach ki")
+    speech("Hallo ich bin eine sprach ki.")
+else:
+    speech("Ich habe dich leider nicht verstanden.")
+    speech("Bitte versuche es nochmal")
